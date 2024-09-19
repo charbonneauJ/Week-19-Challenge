@@ -14,7 +14,7 @@ module.exports = () => {
       install: "./src/js/install.js",
     },
     output: {
-      filename: "bundle.js",
+      filename: "done.bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
@@ -22,7 +22,22 @@ module.exports = () => {
         template: "./index.html",
         title: "Webpack Plugin ",
       }),
-      new WebpackPwaManifest(),
+      new WebpackPwaManifest({
+        name: "Text Editor",
+        short_name: "TEdit",
+        description: "Edit some text!",
+        background_color: "#ffffff",
+        theme_color: "#2196f3",
+        publicPath: "./",
+        start_url: "./",
+        icons: [
+          {
+            src: path.resolve("src/images/icon.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+        ],
+      }),
       new WorkboxPlugin.GenerateSW(),
       new MiniCssExtractPlugin(),
       new InjectManifest({
@@ -44,6 +59,10 @@ module.exports = () => {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env"],
+              plugins: [
+                "@babel/plugin-transform-runtime",
+                "@babel/plugin-proposal-rest-spread",
+              ],
             },
           },
         },
