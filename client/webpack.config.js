@@ -14,9 +14,10 @@ module.exports = () => {
       install: "./src/js/install.js",
     },
     output: {
-      filename: "done.bundle.js",
+      filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
+
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
@@ -32,9 +33,9 @@ module.exports = () => {
         start_url: "./",
         icons: [
           {
-            src: path.resolve("src/images/icon.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join("assets", "icons"),
+            destination: path.join("assets", "logo"),
           },
         ],
       }),
@@ -43,7 +44,6 @@ module.exports = () => {
       new MiniCssExtractPlugin(),
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "sw.js",
       }),
     ],
 
@@ -62,7 +62,7 @@ module.exports = () => {
               presets: ["@babel/preset-env"],
               plugins: [
                 "@babel/plugin-transform-runtime",
-                "@babel/plugin-proposal-rest-spread",
+                "@babel/plugin-proposal-object-rest-spread",
               ],
             },
           },
