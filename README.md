@@ -5,7 +5,7 @@ This is my Zainy Text Editor for the Week 19 Challenge. I am routing and refinin
 
 ## Demo
 
-Insert gif or link to demo
+https://zainy-text-edittor.onrender.com/
 
 
 ## Screenshots
