@@ -10,8 +10,8 @@ Insert gif or link to demo
 
 ## Screenshots
 
-![App Screenshot](![image](https://github.com/user-attachments/assets/538c6124-66a8-4f96-bab1-c2d447cde06d)
-)
+![image](https://github.com/user-attachments/assets/538c6124-66a8-4f96-bab1-c2d447cde06d)
+
 
 
 ## 🚀 About Me
